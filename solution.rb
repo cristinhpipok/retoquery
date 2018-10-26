@@ -3,10 +3,11 @@ require 'sinatra'
 
 
 get '/' do
-  name = params["name"]
-  if name || name != ""
-     "<h1>Hola #{name}!</h1>"
-   else
+
+  if params["nombre"] == "" || params == {}
      "<h1>Hola desconocido!<h1>"
+   else
+     nombre = params["nombre"]
+     "<h1>Hola #{nombre}!</h1>"
   end
 end
